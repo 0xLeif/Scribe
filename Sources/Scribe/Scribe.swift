@@ -23,12 +23,6 @@ open class Scribe: Pluginable {
     /// An alias for Logger.Metadata.
     public typealias Metadata = Logger.Metadata
 
-    /// A key path property to represent immutability.
-    var immutable: Void {
-        get { () }
-        set { }
-    }
-
     /// The private logger used by Scribe.
     private let logger: Logger
     /// The plugins attached to Scribe.
