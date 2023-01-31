@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/0xOpenBytes/o",
       "state" : {
-        "revision" : "7751d08c5db1c7e4f339289dce1e92b033114ffd",
-        "version" : "1.0.0"
+        "revision" : "7e3aafa62705697a04db410bffc915e37e791649",
+        "version" : "1.0.1"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/0xLeif/Plugin",
       "state" : {
-        "revision" : "ddae9f8ce0ef8cda0f66cffd791a90a5b3f6684e",
-        "version" : "0.1.1"
+        "revision" : "adae34d16635f5e98f4a0b2728c465910a08e7c3",
+        "version" : "0.2.0"
       }
     },
     {

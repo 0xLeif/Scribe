@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "Scribe",
     platforms: [
-        .macOS(.v12),
-        .iOS(.v15),
-        .watchOS(.v8),
-        .tvOS(.v15)
+        .macOS(.v11),
+        .iOS(.v14),
+        .watchOS(.v7),
+        .tvOS(.v14)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -21,7 +21,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
          .package(url: "https://github.com/apple/swift-log", from: "1.5.2"),
-         .package(url: "https://github.com/0xLeif/Plugin", from: "0.1.0"),
+         .package(url: "https://github.com/0xLeif/Plugin", from: "0.2.0"),
          .package(url: "https://github.com/0xOpenBytes/o", from: "1.0.0")
     ],
     targets: [
