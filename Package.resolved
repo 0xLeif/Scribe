@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "o",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/0xOpenBytes/o",
+      "state" : {
+        "revision" : "7751d08c5db1c7e4f339289dce1e92b033114ffd",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "plugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/0xLeif/Plugin",
+      "state" : {
+        "revision" : "ddae9f8ce0ef8cda0f66cffd791a90a5b3f6684e",
+        "version" : "0.1.1"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log",
+      "state" : {
+        "revision" : "32e8d724467f8fe623624570367e3d50c5638e46",
+        "version" : "1.5.2"
+      }
+    }
+  ],
+  "version" : 2
+}
