@@ -41,7 +41,7 @@ final class ScribeTests: XCTestCase {
 
             private init() {}
 
-            func handle(value: Scribe.PluginPayload, output: inout ()) async throws {
+            func handle(value: Scribe.PluginPayload) async throws {
                 count += 1
             }
         }

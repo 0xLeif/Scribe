@@ -42,7 +42,7 @@ public struct URLPlugin: ScribePlugin {
     }
 
     /// Handles the given `Scribe.PluginPayload` by sending it to the remote URL.
-    public func handle(value: Scribe.PluginPayload, output: inout ()) async throws {
+    public func handle(value: Scribe.PluginPayload) async throws {
         let dataResponse = try await o.url.post(
             url: url,
             body: try await outputFormatter(value),

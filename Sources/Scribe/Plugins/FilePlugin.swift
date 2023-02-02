@@ -23,7 +23,7 @@ public struct FilePlugin: ScribePlugin {
     }
 
     /// Handles the logging event by writing it to a file.
-    public func handle(value: Scribe.PluginPayload, output: inout ()) async throws {
+    public func handle(value: Scribe.PluginPayload) async throws {
         guard let formattedLog = try await outputFormatter(value) else {
             return
         }
