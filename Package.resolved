@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/0xLeif/Plugin",
       "state" : {
-        "revision" : "adae34d16635f5e98f4a0b2728c465910a08e7c3",
-        "version" : "0.2.0"
+        "revision" : "2663e6f54142d62111129648c17e3b302a0677e9",
+        "version" : "1.0.0"
       }
     },
     {
