@@ -18,7 +18,7 @@ class CountPlugin: ScribePlugin {
 
     private init() {}
 
-    func handle(value: Scribe.PluginPayload, output: inout ()) async throws {
+    func handle(value: Scribe.PluginPayload) async throws {
         count += 1
     }
 }

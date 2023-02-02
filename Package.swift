@@ -21,7 +21,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
          .package(url: "https://github.com/apple/swift-log", from: "1.5.2"),
-         .package(url: "https://github.com/0xLeif/Plugin", from: "0.2.0"),
+         .package(url: "https://github.com/0xLeif/Plugin", from: "1.0.0"),
          .package(url: "https://github.com/0xOpenBytes/o", from: "1.0.0")
     ],
     targets: [
