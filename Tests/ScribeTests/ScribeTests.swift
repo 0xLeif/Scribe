@@ -26,11 +26,11 @@ final class ScribeTests: XCTestCase {
 
         // Clean up and delete test file
 
-        XCTAssertNoThrow(try o.file.data(filename: filename))
+        XCTAssertNoThrow(try o.file.string(filename: filename))
 
         try o.file.delete(filename: filename)
 
-        XCTAssertThrowsError(try o.file.data(filename: filename))
+        XCTAssertThrowsError(try o.file.string(filename: filename))
     }
 
     func testPeristablePlugin() async throws {
