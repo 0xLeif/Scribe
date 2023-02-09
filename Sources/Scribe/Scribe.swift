@@ -32,12 +32,43 @@ open class Scribe: Pluginable {
     ///
     /// - Parameters:
     ///   - label: The label for the logger.
-    ///   - initialPlugins: The initial plugins to attach to Scribe.
+    ///   - plugins: The initial plugins to attach to Scribe.
     public init(
         label: String,
         plugins initialPlugins: [any Plugin] = []
     ) {
         logger = Logger(label: label)
+        plugins = initialPlugins
+    }
+
+    /// Initializes a new instance of Scribe.
+    ///
+    /// - Parameters:
+    ///   - label: The label for the logger.
+    ///   - factory: A closure creating non-standard `LogHandler`s.
+    ///   - plugins: The initial plugins to attach to Scribe.
+    public init(
+        label: String,
+        factory: (String) -> LogHandler,
+        plugins initialPlugins: [any Plugin] = []
+    ) {
+        logger = Logger(label: label, factory: factory)
+        plugins = initialPlugins
+    }
+
+    /// Initializes a new instance of Scribe.
+    ///
+    /// - Parameters:
+    ///   - label: The label for the logger.
+    ///   - metadataProvider: The custom metadata provider this logger should invoke,
+    ///                         instead of the system wide bootstrapped one, when a log statement is about to be emitted.
+    ///   - plugins: The initial plugins to attach to Scribe.
+    public init(
+        label: String,
+        metadataProvider: Logger.MetadataProvider,
+        plugins initialPlugins: [any Plugin] = []
+    ) {
+        logger = Logger(label: label, metadataProvider: metadataProvider)
         plugins = initialPlugins
     }
 
