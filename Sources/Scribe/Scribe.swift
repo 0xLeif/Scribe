@@ -15,7 +15,7 @@ open class Scribe: Pluginable {
         /// The source of the log event.
         public let source: String?
 
-        init(level: Level, message: Message, metadata: Metadata?, source: String?) {
+        public init(level: Level, message: Message, metadata: Metadata?, source: String?) {
             self.level = level
             self.message = message
             self.metadata = metadata
