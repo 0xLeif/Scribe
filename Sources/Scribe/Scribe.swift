@@ -14,6 +14,13 @@ open class Scribe: Pluginable {
         public let metadata: Metadata?
         /// The source of the log event.
         public let source: String?
+
+        init(level: Level, message: Message, metadata: Metadata?, source: String?) {
+            self.level = level
+            self.message = message
+            self.metadata = metadata
+            self.source = source
+        }
     }
 
     /// An alias Logger.Level.
