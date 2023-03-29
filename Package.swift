@@ -21,8 +21,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
          .package(url: "https://github.com/apple/swift-log", from: "1.5.2"),
-         .package(url: "https://github.com/0xLeif/Plugin", from: "2.0.0"),
-         .package(url: "https://github.com/0xOpenBytes/o", from: "2.0.0")
+         .package(url: "https://github.com/0xLeif/Plugin", from: "2.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -31,8 +30,7 @@ let package = Package(
             name: "Scribe",
             dependencies: [
                 .product(name: "Logging", package: "swift-log"),
-                .product(name: "Plugin", package: "Plugin"),
-                .product(name: "o", package: "o")
+                .product(name: "Plugin", package: "Plugin")
             ]
         ),
         .testTarget(
