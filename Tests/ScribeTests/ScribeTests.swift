@@ -1,4 +1,3 @@
-import o
 import Plugin
 import XCTest
 @testable import Scribe
