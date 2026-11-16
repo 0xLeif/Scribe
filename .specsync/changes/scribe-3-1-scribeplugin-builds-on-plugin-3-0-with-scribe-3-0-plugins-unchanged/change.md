@@ -1,6 +1,6 @@
 ---
 id: scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged
-state: approved
+state: implementing
 type: feature
 base_commit: 375c663dfbfac31ab3777ab908b81dbfddcc9099
 ---
