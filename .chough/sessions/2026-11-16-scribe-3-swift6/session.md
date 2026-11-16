@@ -9,7 +9,7 @@ stage: plan
 stage_status: active
 iteration: 1
 callers: []
-native_change: ""
+native_change: scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency
 pr: ""
 criteria: [SWIFT6-1, SWIFT6-2, SWIFT6-3]
 requirements: []
