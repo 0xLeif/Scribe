@@ -19,7 +19,11 @@ files: []
 observations: [2026-11-16-at-77a3fcb-swift-test-swift-6-mode-from-tools-6-0-15-tests-in]
 bugs: []
 blockers: []
-waiting_on_human: []
+waiting_on_human:
+  - gate: Implementation review of scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency
+    holds: accept
+    drives: review
+    opened: 2026-11-16T02:45:29Z
 run_consents: []
 next: Continue accept
 ---
@@ -85,4 +89,10 @@ Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork depen
   - native_change: scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency
   - gate: native:approved
   - revision: 77a3fcb515d1b78d697942148814e357acb76ec0
+  - by: claude-code (hc t28)
+- 2026-11-16T02:45:29Z · gate-opened · accept → accept · Implementation review of scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency ^t-5637a4
+  - native_change: scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency
+  - revision: 7d7700bc459ed0f5cbd1dc875196d2f832da99ff
+  - holds: accept
+  - drives: review
   - by: claude-code (hc t28)
