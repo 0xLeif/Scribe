@@ -30,7 +30,10 @@
     "Sources/Scribe/"
   ],
   "ignored_paths": [
-    ".specsync/"
+    ".specsync/",
+    ".chough/sessions/",
+    ".chough/archive/",
+    ".chough/bugs/"
   ],
   "verification_commands": [],
   "custom_artifacts": {},
