@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "workflow_version": 3,
+  "workflow_origin_version": 2,
+  "id": "scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency",
+  "slug": "scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency",
+  "title": "Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency",
+  "description": "Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency",
+  "kind": "feature",
+  "state": "accepted",
+  "canonical_applied": true,
+  "base_commit": "6cb66280af3ae57fc1619ec1e3a89726ace89e8d",
+  "created_at": 1794796112,
+  "updated_at": 1794797359,
+  "affected_specs": [
+    "Scribe"
+  ],
+  "affected_paths": [
+    "Sources/Scribe",
+    "Tests/ScribeTests",
+    "Package.swift",
+    "Package.resolved",
+    "README.md",
+    "specs/Scribe",
+    ".chough/sessions",
+    ".specsync/sdd.json"
+  ],
+  "no_spec_change": false,
+  "no_spec_change_rationale": null,
+  "acceptance_criteria": [
+    "Scribe 3.0.0 builds in Swift 6 with Sendable public types, its own plugin protocol and only swift-log, logs synchronously and delivers every entry to each plugin in order."
+  ],
+  "selected_artifacts": [
+    "context",
+    "requirements",
+    "plan",
+    "tasks",
+    "testing",
+    "docs",
+    "design",
+    "research"
+  ],
+  "dependencies": [],
+  "answers": {
+    "architecture_risk": "yes",
+    "constraints": "Swift 6 strict concurrency; synchronous logging calls; a 3.0.0 major version for the API break",
+    "public_contract": "yes"
+  }
+}

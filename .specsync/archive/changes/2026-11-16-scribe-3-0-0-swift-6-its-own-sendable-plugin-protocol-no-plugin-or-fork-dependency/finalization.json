@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "change_id": "scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency",
+  "implementation_commit": "f00b56fb399f4415d9a4357dbe581a41e280d875",
+  "implementation_tree": "a5034829f0eef109f6ccabb753bb2f68089be7a4",
+  "contract_digest": "a9b60996f15977d342d1247b888f22a0b65f05843185d51c1c056540f9805a75",
+  "workspace_digest": "a0ea36f632a86da93515fa64fe5798d0ea2f4f748b3d95e1742c11f5e2c44902",
+  "closing_digest": "19f4e9560abc77cec05335ba761db7d060f9eba473b417ef767707a06a8f9991",
+  "review_digest": "4c8ba62e3e91aaca7f12007175b8f33c1bc8e1a7178939b22d2fb78b9380f878",
+  "finalization_digest": "5b42a9ae34b7b4a4e5dfa95d8783587286d98e1cabfc7e679516efef5a7aeb8f",
+  "timestamp": 1794797359
+}

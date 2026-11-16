@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "reviews": [
+    {
+      "schema_version": 2,
+      "change_id": "scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency",
+      "reviewer": "0xLeif",
+      "provenance": {
+        "schema_version": 1,
+        "provider": "github_actions_check",
+        "required_check": "SpecSync scoped review"
+      },
+      "verdict": "pass",
+      "implementation_commit": "f00b56fb399f4415d9a4357dbe581a41e280d875",
+      "contract_digest": "a9b60996f15977d342d1247b888f22a0b65f05843185d51c1c056540f9805a75",
+      "execution_digest": "2b22c85590df9f82789c6a9819fa957b830eb65ec75ef1250cb634f1c80916ca",
+      "workspace_digest": "a0ea36f632a86da93515fa64fe5798d0ea2f4f748b3d95e1742c11f5e2c44902",
+      "timestamp": 1794797353,
+      "relayed_by": {
+        "decided_by": "0xLeif",
+        "words": "yes",
+        "where": "Claude Code chat (hc t28), 2026-11-16, answering 'Do you accept Scribe 3.0.0 with those choices?' (list 60aebbafd3ce, 0xLeif/Scribe#10: macOS 13 / iOS 16 minimums, final Scribe, no Task return, dropped plugin errors, unbounded buffer)",
+        "recorded_by": "claude-code (hc t28)"
+      }
+    }
+  ]
+}

@@ -48,6 +48,13 @@
         "where": "Claude Code chat (hc t28), 2026-11-16, answering 'Do you approve: 1. Scribe 3.0.0, dropping the Plugin/Fork dependency, with Chough set up in the Scribe repo? 2. The Starling debug mode scope?'",
         "recorded_by": "claude-code (hc t28)"
       }
+    },
+    {
+      "gate": "finalization",
+      "actor": "specsync:finalization",
+      "timestamp": 1794797359,
+      "digest": "19f4e9560abc77cec05335ba761db7d060f9eba473b417ef767707a06a8f9991",
+      "note": "Same-PR finalization closing digest"
     }
   ],
   "reopenings": []
