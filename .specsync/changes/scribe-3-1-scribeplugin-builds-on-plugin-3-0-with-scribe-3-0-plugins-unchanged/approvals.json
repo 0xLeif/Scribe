@@ -1,4 +1,56 @@
 {
-  "approvals": [],
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "0xLeif",
+      "timestamp": 1794799304,
+      "digest": "1c4c051b11d31787751cccbe08c84e63bfba503b9b37dfd07280b7d6da36e8d2",
+      "note": "Approved by 0xLeif at the Chough gate \"Approve the scope of scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged\": \"yes do Plugin 3.0 and Scribe 3.1\" (Claude Code chat (hc t28), 2026-11-16, approving Plugin 3.0 and Scribe 3.1 adopting it with Scribe 3.0 plugins unchanged). Relayed and recorded by claude-code (hc t28) at 2026-11-16T03:21:44Z through chough gate record bfd34d40aae4; a relayed claim, not authenticated.",
+      "approved_scope": {
+        "schema_version": 1,
+        "change_id": "scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged",
+        "title": "Scribe 3.1: ScribePlugin builds on Plugin 3.0, with Scribe 3.0 plugins unchanged",
+        "description": "Scribe 3.1: ScribePlugin builds on Plugin 3.0, with Scribe 3.0 plugins unchanged",
+        "kind": "feature",
+        "affected_specs": [
+          "Scribe"
+        ],
+        "affected_paths": [
+          ".chough/sessions",
+          "INTENT.md",
+          "Package.swift",
+          "README.md",
+          "Sources/Scribe",
+          "Tests/ScribeTests",
+          "hi/swift6.md",
+          "specs/Scribe"
+        ],
+        "no_spec_change": false,
+        "no_spec_change_rationale": null,
+        "acceptance_criteria": [
+          "Scribe 3.1 depends on Plugin 3.0, ScribePlugin refines ImmutablePlugin, and every Scribe 3.0 plugin and API keeps working unchanged."
+        ],
+        "dependencies": [],
+        "supersedes": [],
+        "answers": {
+          "architecture_risk": "no",
+          "constraints": "Source compatibility with Scribe 3.0; Swift 6; keep Scribe's ordered, error-skipping delivery",
+          "public_contract": "yes"
+        }
+      },
+      "approved_delta_digests": {
+        "Scribe": "719764c9c342ed1a1a17491df420a02ce728770edff6ee58a4326ee96ddd8879"
+      },
+      "approved_delta_bases": {
+        "Scribe: REQUIREMENT REQ-Scribe-2": "b53934454d107ed5beddf6eacc00c8ee89b605946094a030a2d5a33b71d80e79"
+      },
+      "relayed_by": {
+        "decided_by": "0xLeif",
+        "words": "yes do Plugin 3.0 and Scribe 3.1",
+        "where": "Claude Code chat (hc t28), 2026-11-16, approving Plugin 3.0 and Scribe 3.1 adopting it with Scribe 3.0 plugins unchanged",
+        "recorded_by": "claude-code (hc t28)"
+      }
+    }
+  ],
   "reopenings": []
 }

@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
-  "workflow_version": 2,
+  "workflow_version": 3,
   "workflow_origin_version": 2,
   "id": "scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged",
   "slug": "scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged",
   "title": "Scribe 3.1: ScribePlugin builds on Plugin 3.0, with Scribe 3.0 plugins unchanged",
   "description": "Scribe 3.1: ScribePlugin builds on Plugin 3.0, with Scribe 3.0 plugins unchanged",
   "kind": "feature",
-  "state": "draft",
+  "state": "approved",
   "base_commit": "375c663dfbfac31ab3777ab908b81dbfddcc9099",
   "created_at": 1794799289,
-  "updated_at": 1794799303,
+  "updated_at": 1794799304,
   "affected_specs": [
     "Scribe"
   ],
