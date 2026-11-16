@@ -57,6 +57,25 @@
         "REQ-Scribe-2",
         "REQ-Scribe-5"
       ]
+    },
+    {
+      "timestamp": 1794799763,
+      "commit": "ab393ef4542e0997b8e5173ffc3330aefd9722cb",
+      "contract_digest": "1c4c051b11d31787751cccbe08c84e63bfba503b9b37dfd07280b7d6da36e8d2",
+      "execution_digest": "ef72b475fcdaf45d2aa82eff7853635a45f94fb26736694235ee12644ee0c081",
+      "workspace_digest": "b47cf466a74664b36c969ffa57f4723426a4b3f5edebae74756810e844914d3f",
+      "passed": true,
+      "commands": [
+        {
+          "command": "specsync check --spec Scribe",
+          "success": true,
+          "exit_code": 0
+        }
+      ],
+      "requirement_ids": [
+        "REQ-Scribe-2",
+        "REQ-Scribe-5"
+      ]
     }
   ]
 }
