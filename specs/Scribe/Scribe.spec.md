@@ -14,7 +14,7 @@ depends_on: []
 
 ## Purpose
 
-Scribe is a Swift 6 logging library. A `Scribe` writes each entry to swift-log and hands it to every registered `ScribePlugin`, in the order entries were logged, one at a time, without making the caller wait. It owns the plugin list, the ordered delivery pipeline and the plugin payload; it does not own any log output beyond swift-log, which the caller configures (REQ-Scribe-1, REQ-Scribe-2, REQ-Scribe-3).
+Scribe is a Swift 6 logging library. A `Scribe` writes each entry to swift-log and hands it to every registered `ScribePlugin`, in the order entries were logged, one at a time, without making the caller wait. It owns the plugin list, the ordered delivery pipeline and the plugin payload; it does not own any log output beyond swift-log, which the caller configures. `ScribePlugin` refines Plugin 3.0's `ImmutablePlugin` so Scribe plugins also work with Plugin's API, while Scribe keeps its own delivery and every Scribe 3.0 plugin and API works unchanged (REQ-Scribe-1, REQ-Scribe-2, REQ-Scribe-3, REQ-Scribe-5).
 
 ## Public API
 
@@ -48,7 +48,7 @@ Scribe is a Swift 6 logging library. A `Scribe` writes each entry to swift-log a
 | `warning` | Logs at `.warning`; same parameters and behavior as `log`. |
 | `error` | Logs at `.error`; same parameters and behavior as `log`. |
 | `critical` | Logs at `.critical`; same parameters and behavior as `log`. |
-| `ScribePlugin` | `public protocol ScribePlugin: Sendable` with `func handle(value: Scribe.PluginPayload) async throws`. |
+| `ScribePlugin` | `public protocol ScribePlugin: ImmutablePlugin where Input == Scribe.PluginPayload` (Plugin 3.0, so `Sendable` and `Output == Void`). It restates `func handle(value: Scribe.PluginPayload) async throws`, the same requirement as `ImmutablePlugin`'s, so one method satisfies both and code importing only Scribe can call it. |
 | `handle` | Called once per entry per plugin, on Scribe's delivery task. |
 
 ### Types
@@ -63,16 +63,19 @@ Scribe is a Swift 6 logging library. A `Scribe` writes each entry to swift-log a
 
 | Protocol | Description |
 |----------|-------------|
-| `ScribePlugin` | `Sendable` receiver of logged entries; `handle(value:)` is `async throws`. |
+| `ScribePlugin` | `Sendable` receiver of logged entries and a Plugin 3.0 `ImmutablePlugin<Scribe.PluginPayload>`; `handle(value:)` is `async throws` and is its only requirement. |
 
 ## Invariants
 
-1. The package builds with swift-tools-version 6.0 (Swift 6 language mode) and depends only on swift-log (REQ-Scribe-1, REQ-Scribe-2).
+1. The package builds with swift-tools-version 6.0 (Swift 6 language mode) and depends only on swift-log and Plugin from 3.0.0; Fork is not a dependency (REQ-Scribe-1, REQ-Scribe-2).
 2. `Scribe`, `Scribe.PluginPayload`, `Scribe.PluginRegistration` and `ScribePlugin` are `Sendable` with checked conformances; the plugin list is guarded by `OSAllocatedUnfairLock`, with no `@unchecked Sendable` (REQ-Scribe-1).
 3. A logging call never awaits: it logs to swift-log, then enqueues the entry under the plugin lock, so pipeline order equals the order calls took the lock (REQ-Scribe-3).
 4. One delivery task consumes the pipeline; it hands each entry to each plugin in registration order and waits for each `handle` before the next, so a plugin receives entries one at a time in logged order (REQ-Scribe-3).
 5. An entry goes to the plugins registered when it was logged; a plugin registered later or removed earlier does not receive it.
 6. Entries already logged are still delivered after the `Scribe` is released; the delivery task holds the stream, not the `Scribe`.
+7. A type that conforms to `ScribePlugin` by implementing only `handle(value: Scribe.PluginPayload) async throws` needs only `import Scribe`, and Scribe keeps 3.0's public API. Scribe does not re-export Plugin (REQ-Scribe-5).
+8. Scribe keeps its own lock-protected plugin list and delivery task; it does not store plugins in Plugin's `Plugins` or run them with `handleInOrder`, whose first error stops the run (REQ-Scribe-3, REQ-Scribe-5).
+9. Scribe never converts `any ScribePlugin` to `any ImmutablePlugin<Scribe.PluginPayload>`; Swift 6.4's type checker crashes on that conversion. Callers hand an `any ScribePlugin` to Plugin's generic `register(_:)`, one at a time (REQ-Scribe-5).
 
 ## Behavioral Examples
 
@@ -100,6 +103,18 @@ Scribe is a Swift 6 logging library. A `Scribe` writes each entry to swift-log a
 - **When** `remove(plugin:)` or `removeAllPlugins()` is called between two log calls
 - **Then** removed plugins receive only the first entry
 
+### Scenario: Scribe 3.0 plugins
+
+- **Given** a struct and an actor that implement only `handle(value: Scribe.PluginPayload) async throws`, in a file that imports Scribe but not Plugin
+- **When** they are registered at creation or with `register(plugin:)` and 500 entries are logged
+- **Then** each receives all 500 entries in order
+
+### Scenario: Plugin interop
+
+- **Given** two `any ScribePlugin` values registered one at a time in a `Plugins<Scribe.PluginPayload, Void>` with its generic `register(_:)`
+- **When** `handleInOrder(value:)` is called with three payloads
+- **Then** each plugin has received the three payloads in order
+
 ### Scenario: Concurrent logging
 
 - **Given** 50 tasks sharing one Scribe
@@ -122,6 +137,7 @@ Scribe is a Swift 6 logging library. A `Scribe` writes each entry to swift-log a
 | Module | What is used |
 |--------|-------------|
 | swift-log (`Logging`) | `Logger`, `Logger.Level`, `Logger.Message`, `Logger.Metadata`, `Logger.MetadataProvider`, `LogHandler` |
+| Plugin 3.0 (`Plugin`) | `ImmutablePlugin`, which `ScribePlugin` refines; not re-exported |
 | `os` | `OSAllocatedUnfairLock` for the plugin list |
 | Foundation | `Date` in `PluginPayload` |
 
@@ -136,4 +152,5 @@ Scribe is a Swift 6 logging library. A `Scribe` writes each entry to swift-log a
 | Date | Author | Change |
 |------|--------|--------|
 | 2026-11-16 | claude-code | Scribe 3.0.0: Swift 6, own `Sendable` `ScribePlugin`, swift-log only, ordered delivery pipeline with `flush()`, plugin removal, call site and date in `PluginPayload` (REQ-Scribe-1 to REQ-Scribe-4). |
+| 2026-11-16 | claude-code | Scribe 3.1.0: `ScribePlugin` refines Plugin 3.0's `ImmutablePlugin` with the same single requirement; Plugin 3.0 dependency; 3.0 plugins and API unchanged (REQ-Scribe-2, REQ-Scribe-5). |
 | 2026-11-16 | SpecSync | scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency: Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency |
