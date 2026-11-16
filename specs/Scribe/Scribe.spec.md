@@ -1,6 +1,6 @@
 ---
 module: Scribe
-version: 1
+version: 2
 status: active
 files:
   - Sources/Scribe/Scribe.swift
@@ -136,3 +136,4 @@ Scribe is a Swift 6 logging library. A `Scribe` writes each entry to swift-log a
 | Date | Author | Change |
 |------|--------|--------|
 | 2026-11-16 | claude-code | Scribe 3.0.0: Swift 6, own `Sendable` `ScribePlugin`, swift-log only, ordered delivery pipeline with `flush()`, plugin removal, call site and date in `PluginPayload` (REQ-Scribe-1 to REQ-Scribe-4). |
+| 2026-11-16 | SpecSync | scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency: Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency |

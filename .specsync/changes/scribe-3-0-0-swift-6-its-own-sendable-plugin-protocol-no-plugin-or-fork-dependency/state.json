@@ -7,10 +7,11 @@
   "title": "Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency",
   "description": "Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency",
   "kind": "feature",
-  "state": "approved",
+  "state": "verifying",
+  "canonical_applied": true,
   "base_commit": "6cb66280af3ae57fc1619ec1e3a89726ace89e8d",
   "created_at": 1794796112,
-  "updated_at": 1794796167,
+  "updated_at": 1794797128,
   "affected_specs": [
     "Scribe"
   ],
