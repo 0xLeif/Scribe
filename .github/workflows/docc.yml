@@ -25,7 +25,8 @@ jobs:
             -destination 'generic/platform=iOS';
           $(xcrun --find docc) process-archive \
             transform-for-static-hosting /tmp/docbuild/Build/Products/Debug-iphoneos/Scribe.doccarchive \
-            --output-path docs;
+            --output-path docs \
+            --hosting-base-path Scribe;
           echo "<script>window.location.href += \"/documentation/scribe\"</script>" > docs/index.html;
       - name: artifacts
         uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "workflow_version": 3,
+  "workflow_origin_version": 2,
+  "id": "scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged",
+  "slug": "scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged",
+  "title": "Scribe 3.1: ScribePlugin builds on Plugin 3.0, with Scribe 3.0 plugins unchanged",
+  "description": "Scribe 3.1: ScribePlugin builds on Plugin 3.0, with Scribe 3.0 plugins unchanged",
+  "kind": "feature",
+  "state": "verifying",
+  "canonical_applied": true,
+  "base_commit": "375c663dfbfac31ab3777ab908b81dbfddcc9099",
+  "created_at": 1794799289,
+  "updated_at": 1794799763,
+  "affected_specs": [
+    "Scribe"
+  ],
+  "affected_paths": [
+    "Sources/Scribe",
+    "Tests/ScribeTests",
+    "Package.swift",
+    "README.md",
+    "specs/Scribe",
+    ".chough/sessions",
+    "hi/swift6.md",
+    "INTENT.md"
+  ],
+  "no_spec_change": false,
+  "no_spec_change_rationale": null,
+  "acceptance_criteria": [
+    "Scribe 3.1 depends on Plugin 3.0, ScribePlugin refines ImmutablePlugin, and every Scribe 3.0 plugin and API keeps working unchanged."
+  ],
+  "selected_artifacts": [
+    "context",
+    "requirements",
+    "plan",
+    "tasks",
+    "testing",
+    "docs",
+    "design"
+  ],
+  "dependencies": [],
+  "answers": {
+    "architecture_risk": "no",
+    "constraints": "Source compatibility with Scribe 3.0; Swift 6; keep Scribe's ordered, error-skipping delivery",
+    "public_contract": "yes"
+  }
+}

@@ -6,5 +6,5 @@
 ## Features
 
 <!-- hi:index -->
-- [swift6](hi/swift6.md): SWIFT6 (3 criteria)
+- [swift6](hi/swift6.md): SWIFT6 (4 criteria)
 <!-- /hi:index -->
