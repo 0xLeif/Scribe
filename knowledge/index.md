@@ -20,15 +20,19 @@ changes and Chough's records each stay where they live, linked below.
 ## Journal: the timeline of archived changes
 
 The [journal](journal/) and its [feed](journal/feed.xml) are the timeline of archived
-changes. No native change was archived before the journal began.
+changes. Changes archived before the journal began are in [.specsync/archive/changes/](../.specsync/archive/changes/).
 
 Newest posts:
 
-- none yet
+- [Scribe 3.0.0: Swift 6](journal/2026-11-16-scribe-3-0-0-swift-6.md) (2026-11-16, shipped)
 
 ## Where things live
 
+- Intent and acceptance criteria: [hi/](../hi/)
+- Contracts and requirements: [specs/](../specs/)
+- Archived native changes: [.specsync/archive/](../.specsync/archive/)
 - Chough's records: [.chough/README.md](../.chough/README.md)
+- Finished sessions: [.chough/archive/sessions/](../.chough/archive/sessions/)
 
 ## Open bugs
 
@@ -36,13 +40,15 @@ Newest posts:
 
 ## Rules, skills and decisions
 
+- [hi/AGENTS.md](../hi/AGENTS.md)
 - [.agents/skills/chough-workflow/SKILL.md](../.agents/skills/chough-workflow/SKILL.md)
+- [.specsync/sdd.json](../.specsync/sdd.json)
 
 ## Lessons
 
 Each module's lessons stay in its lesson source:
 
-- none
+- Scribe: `specs/Scribe/context.md` (not present), 0 lessons
 
 Lessons that span projects:
 
@@ -50,7 +56,7 @@ Lessons that span projects:
 
 Lesson bundles of the newest 3 archived changes:
 
-- none
+- [scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency](../.specsync/archive/changes/2026-11-16-scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency/lesson-bundle.md), Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency
 
 ## Snapshots and briefs
 
