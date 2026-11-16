@@ -8,3 +8,6 @@ DerivedData/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
 /Package.resolved
+
+# spec-sync hash cache (regenerated locally)
+.specsync/hashes.json

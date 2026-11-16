@@ -1,0 +1,9 @@
+# spec-sync configuration
+# Docs: https://github.com/CorvidLabs/spec-sync
+
+specs_dir = "specs"
+source_dirs = ["Sources/Scribe"]
+exclude_dirs = ["__tests__"]
+exclude_patterns = ["**/__tests__/**", "**/*.test.ts", "**/*.spec.ts"]
+required_sections = ["Purpose", "Public API", "Invariants", "Behavioral Examples", "Error Cases", "Dependencies", "Change Log"]
+enforcement = "strict"
