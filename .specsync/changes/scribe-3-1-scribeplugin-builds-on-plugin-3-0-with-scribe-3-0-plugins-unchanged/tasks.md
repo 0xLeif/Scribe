@@ -5,6 +5,6 @@ artifact: tasks
 
 # Tasks
 
-- [ ] Plugin 3.0 dependency; ScribePlugin refines ImmutablePlugin (REQ-Scribe-2)
-- [ ] 3.0 plugins unchanged; interop tests (REQ-Scribe-5)
-- [ ] README, DocC, spec
+- [x] Plugin 3.0 dependency; ScribePlugin refines ImmutablePlugin (REQ-Scribe-2)
+- [x] 3.0 plugins unchanged; interop tests (REQ-Scribe-5)
+- [x] README, DocC, spec
