@@ -107,7 +107,7 @@ struct SendableTests {
 
 // MARK: - REQ-Scribe-2
 
-@Suite("REQ-Scribe-2: own plugin protocol, register and remove")
+@Suite("REQ-Scribe-2: plugin protocol on Plugin 3.0, register and remove")
 struct RegistrationTests {
     @Test("REQ-Scribe-2: a plugin registered at creation receives entries")
     func registeredAtCreation() async {
@@ -168,13 +168,15 @@ struct RegistrationTests {
         #expect(scribe.plugins.isEmpty)
     }
 
-    @Test("REQ-Scribe-2: Package.swift depends on swift-log only")
-    func swiftLogOnly() throws {
+    @Test("REQ-Scribe-2: Package.swift depends on exactly swift-log and Plugin 3.0")
+    func swiftLogAndPluginOnly() throws {
         let manifest = try String(contentsOf: packageRoot.appending(path: "Package.swift"), encoding: .utf8)
         let dependencies = manifest.components(separatedBy: ".package(url:").dropFirst()
-        #expect(dependencies.count == 1)
-        #expect(dependencies.first?.contains("apple/swift-log") == true)
-        #expect(!manifest.contains("0xLeif/Plugin"))
+        #expect(dependencies.count == 2)
+        #expect(dependencies.contains { $0.contains("\"https://github.com/apple/swift-log\"") })
+        #expect(dependencies.contains {
+            $0.contains("\"https://github.com/0xLeif/Plugin\"") && $0.contains("from: \"3.0.0\"")
+        })
         #expect(!manifest.contains("Fork"))
     }
 }
