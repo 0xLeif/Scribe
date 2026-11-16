@@ -7,11 +7,11 @@
   "title": "Scribe 3.1: ScribePlugin builds on Plugin 3.0, with Scribe 3.0 plugins unchanged",
   "description": "Scribe 3.1: ScribePlugin builds on Plugin 3.0, with Scribe 3.0 plugins unchanged",
   "kind": "feature",
-  "state": "verifying",
+  "state": "accepted",
   "canonical_applied": true,
   "base_commit": "375c663dfbfac31ab3777ab908b81dbfddcc9099",
   "created_at": 1794799289,
-  "updated_at": 1794799763,
+  "updated_at": 1794799927,
   "affected_specs": [
     "Scribe"
   ],

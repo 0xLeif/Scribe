@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "change_id": "scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged",
+  "reviewer": "0xLeif",
+  "provenance": {
+    "schema_version": 1,
+    "provider": "github_actions_check",
+    "required_check": "SpecSync scoped review"
+  },
+  "verdict": "pass",
+  "implementation_commit": "e4bf6f532159068c5a630968c63851eb3213e7f1",
+  "contract_digest": "1c4c051b11d31787751cccbe08c84e63bfba503b9b37dfd07280b7d6da36e8d2",
+  "execution_digest": "ef72b475fcdaf45d2aa82eff7853635a45f94fb26736694235ee12644ee0c081",
+  "workspace_digest": "b47cf466a74664b36c969ffa57f4723426a4b3f5edebae74756810e844914d3f",
+  "timestamp": 1794799923,
+  "relayed_by": {
+    "decided_by": "0xLeif",
+    "words": "i approve all",
+    "where": "Claude Code chat (hc t28), 2026-11-16, accepting Scribe 3.1 (PR 0xLeif/Scribe#11) and authorizing its admin merge",
+    "recorded_by": "claude-code (hc t28)"
+  }
+}

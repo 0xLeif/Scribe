@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "attempts": [
+    {
+      "timestamp": 1794799760,
+      "commit": "596777834af013f4f1a86d7f4a2db50449b7577b",
+      "contract_digest": "1c4c051b11d31787751cccbe08c84e63bfba503b9b37dfd07280b7d6da36e8d2",
+      "execution_digest": "ef72b475fcdaf45d2aa82eff7853635a45f94fb26736694235ee12644ee0c081",
+      "workspace_digest": "4c0e9f5a80b1f323285ea85c6da58897f85b7b84415bae65f24f3e8419b03860",
+      "passed": true,
+      "commands": [
+        {
+          "command": "specsync check --spec Scribe",
+          "success": true,
+          "exit_code": 0
+        }
+      ],
+      "requirement_ids": [
+        "REQ-Scribe-2",
+        "REQ-Scribe-5"
+      ]
+    },
+    {
+      "timestamp": 1794799761,
+      "commit": "a4ed27eef608b3f2bac6e749568cf790d9b76276",
+      "contract_digest": "1c4c051b11d31787751cccbe08c84e63bfba503b9b37dfd07280b7d6da36e8d2",
+      "execution_digest": "ef72b475fcdaf45d2aa82eff7853635a45f94fb26736694235ee12644ee0c081",
+      "workspace_digest": "73f2e0fadb661dcde977b73bcc3c068cb0001f2ae98937c9abab53d6a4e191b6",
+      "passed": true,
+      "commands": [
+        {
+          "command": "specsync check --spec Scribe",
+          "success": true,
+          "exit_code": 0
+        }
+      ],
+      "requirement_ids": [
+        "REQ-Scribe-2",
+        "REQ-Scribe-5"
+      ]
+    },
+    {
+      "timestamp": 1794799762,
+      "commit": "0718f3cf4b55ee8f49c177b76a24c9d93b5343c7",
+      "contract_digest": "1c4c051b11d31787751cccbe08c84e63bfba503b9b37dfd07280b7d6da36e8d2",
+      "execution_digest": "ef72b475fcdaf45d2aa82eff7853635a45f94fb26736694235ee12644ee0c081",
+      "workspace_digest": "b47cf466a74664b36c969ffa57f4723426a4b3f5edebae74756810e844914d3f",
+      "passed": true,
+      "commands": [
+        {
+          "command": "specsync check --spec Scribe",
+          "success": true,
+          "exit_code": 0
+        }
+      ],
+      "requirement_ids": [
+        "REQ-Scribe-2",
+        "REQ-Scribe-5"
+      ]
+    },
+    {
+      "timestamp": 1794799763,
+      "commit": "ab393ef4542e0997b8e5173ffc3330aefd9722cb",
+      "contract_digest": "1c4c051b11d31787751cccbe08c84e63bfba503b9b37dfd07280b7d6da36e8d2",
+      "execution_digest": "ef72b475fcdaf45d2aa82eff7853635a45f94fb26736694235ee12644ee0c081",
+      "workspace_digest": "b47cf466a74664b36c969ffa57f4723426a4b3f5edebae74756810e844914d3f",
+      "passed": true,
+      "commands": [
+        {
+          "command": "specsync check --spec Scribe",
+          "success": true,
+          "exit_code": 0
+        }
+      ],
+      "requirement_ids": [
+        "REQ-Scribe-2",
+        "REQ-Scribe-5"
+      ]
+    },
+    {
+      "timestamp": 1794799763,
+      "commit": "e4bf6f532159068c5a630968c63851eb3213e7f1",
+      "contract_digest": "1c4c051b11d31787751cccbe08c84e63bfba503b9b37dfd07280b7d6da36e8d2",
+      "execution_digest": "ef72b475fcdaf45d2aa82eff7853635a45f94fb26736694235ee12644ee0c081",
+      "workspace_digest": "b47cf466a74664b36c969ffa57f4723426a4b3f5edebae74756810e844914d3f",
+      "acceptance_input_digest": "9973a0e5ae68979c9fa2629d81884740bf6f1c2f2163f2e7e6a85ae9eda4cd2c",
+      "acceptance_manifest": {
+        "schema_version": 1,
+        "entries": [
+          {
+            "path": ".chough/sessions",
+            "kind": "non_file",
+            "mode": 0,
+            "payload_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "entry_digest": "ed94fa209bed8458af353299e273e42f1e43a88f237fb72c9fdef8473e0f4841",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": ".chough/sessions/2026-11-16-scribe-3-1-plugin/evidence/2026-11-16-at-c643310-swift-test-21-tests-in-6-suites-pass-swift-6-no.md",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "91df3861b68f08e193fa481de645ae0b02dc7f8ba46b989f54b965553353f9f7",
+            "entry_digest": "d6b2a49087cda914f11473c901f5f08d921092741b4cfad29e1e6bccf3bfef62",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": ".chough/sessions/2026-11-16-scribe-3-1-plugin/session.md",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "933908af9a26ecdf418312d3fbe35a5b6dbf69bf570ec961d5b68d1d693b36d9",
+            "entry_digest": "b20086ee08e8619d92b970ae5fab383632535cd5d0c5ddec289656994a0fbbdf",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": "INTENT.md",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "f8be3d0be897993a9266b9c5f70afc9874a1b64c4fcfb6673c67cfeda54ab999",
+            "entry_digest": "b51b894d218f2531cbbc74fe77e700186e128ddbc195ac4a3c6923a6f4b5bd81",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": "Package.swift",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "f653081a7cefe6bfb32888188404167e444c96a5639c73959964f28a94915d8b",
+            "entry_digest": "ca663f201829e532bcd099e2db21e2f0e8b9094cd98459c50934f53665643a44",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": "README.md",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "95b8b05c174113f91219dc615520109610eca4742333ba25932c7e3393d2cfe5",
+            "entry_digest": "1d3fdfea5d271ebdc4d2c3a11f44f1aa43b4f49d58bdb6e72edbaa9241a6d7fa",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": "Sources/Scribe",
+            "kind": "non_file",
+            "mode": 0,
+            "payload_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "entry_digest": "17b4e518043f6283661582041e4d028f71643aff5268653fa1bed173f2a02a2d",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": "Sources/Scribe/Scribe.docc/MovingFrom2x.md",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "d6165b937f771a4ba45afd848d51bfc7a5741e9858e27414f67cb132b61d8d1d",
+            "entry_digest": "3ea2cfba73c9594d758db00e08307aa641b373e9f333bbc264d4c83443ac8166",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": "Sources/Scribe/Scribe.docc/Scribe.md",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "c8a5c2dd7e8ca530a5733a0c204bc117f52facb0cbea5caef59135d5baaecdea",
+            "entry_digest": "f42ba798ecb37260e2c7268da31fbf7ff6eb786d9251ccad9785ac4ff3aaaf5a",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": "Sources/Scribe/Scribe.swift",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "acb4661059bec0a6d3877e20f6cad3f9a3b1e856e5d5e7d2411ac9b4049cf23b",
+            "entry_digest": "1ca665b11271562cbb51888c01130000e76a289ba405492fd818dd4212412a00",
+            "owners": [
+              "Scribe"
+            ]
+          },
+          {
+            "path": "Sources/Scribe/ScribePlugin.swift",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "03ea96ce20babeeda08add1c2a0e073f87b6c80f264f11e7abfd8b84bf63ef1d",
+            "entry_digest": "eed930946402d3c419ae937c4dc94e2aca40d905c29ac5dd8620f6d62a74ba65",
+            "owners": [
+              "Scribe"
+            ]
+          },
+          {
+            "path": "Tests/ScribeTests",
+            "kind": "non_file",
+            "mode": 0,
+            "payload_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "entry_digest": "f89257c2699ea5a1fd8f4a84fea45dab24a5979550af75c23c4c1b6e92f2ff52",
+            "owners": [
+              "@exact:test"
+            ]
+          },
+          {
+            "path": "Tests/ScribeTests/PluginInteropTests.swift",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "384e031f5708ca34c7874448f58ce96d5ee4583a6a420351e6800c5afe3011e1",
+            "entry_digest": "d39a6dca658a3c840b8763b7fd7e15751655370aadabc5e9deee34dbdc366fe1",
+            "owners": [
+              "@exact:test"
+            ]
+          },
+          {
+            "path": "Tests/ScribeTests/Scribe30PluginTests.swift",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "92683e7c303a2668ffb129e507664950fc6ae51221b144fabe20045ba328877b",
+            "entry_digest": "03436571615d256580fdfe1181e684f2abc10247c52579452009a75dc67ca709",
+            "owners": [
+              "@exact:test"
+            ]
+          },
+          {
+            "path": "Tests/ScribeTests/ScribeTests.swift",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "84c9a6a50a0a7600dc36b7dbc30ff7039835fca3dfc79ae9a12c03af01d3efce",
+            "entry_digest": "ded5f0a9f2fb6aa5a2686b6cde3e9fa3cf781bf26efb5caa28b8d12a1066b3b8",
+            "owners": [
+              "@exact:test"
+            ]
+          },
+          {
+            "path": "hi/swift6.md",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "6e39c951d77c2186f2f06e1c95e67a4ce25ae7365d02ed70a7fef954c87e18fd",
+            "entry_digest": "2d5cf6537acda9a41046fedf3c2c8a9ddcb0225ec9d7cb6b59c8733c3ebd4298",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": "specs/Scribe",
+            "kind": "non_file",
+            "mode": 0,
+            "payload_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "entry_digest": "85c07f5e11b08ac7231676b229b13431bbedce847ddce1507845b268df03b1e6",
+            "owners": [
+              "@exact:delivery"
+            ]
+          },
+          {
+            "path": "specs/Scribe/Scribe.spec.md",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "cfe790d6bf4a824167b1f487f12f6dad8c183fd2cb45ad0691f336e6f5cab154",
+            "entry_digest": "15cd287cbeef2ede81a78d8ccb0d32e019f915d7d6b970d14de1488307477352",
+            "owners": [
+              "Scribe"
+            ]
+          },
+          {
+            "path": "specs/Scribe/requirements.md",
+            "kind": "file",
+            "mode": 33188,
+            "payload_digest": "8220a936493b981fe8ff6e3ef49fc86fd26cecacc1a9ea93aa6139c460267fa3",
+            "entry_digest": "793c61b5972d90f7d14414b9b4c05164f8172d7f412d1622663fa20ebf16a554",
+            "owners": [
+              "Scribe"
+            ]
+          }
+        ]
+      },
+      "passed": true,
+      "commands": [
+        {
+          "command": "specsync check --spec Scribe",
+          "success": true,
+          "exit_code": 0
+        }
+      ],
+      "requirement_ids": [
+        "REQ-Scribe-2",
+        "REQ-Scribe-5"
+      ]
+    }
+  ]
+}

@@ -50,6 +50,13 @@
         "where": "Claude Code chat (hc t28), 2026-11-16, approving Plugin 3.0 and Scribe 3.1 adopting it with Scribe 3.0 plugins unchanged",
         "recorded_by": "claude-code (hc t28)"
       }
+    },
+    {
+      "gate": "finalization",
+      "actor": "specsync:finalization",
+      "timestamp": 1794799927,
+      "digest": "5fbf9bc3b24ddbbe2c36a923bb3c90ab718d907e27bc460849669a783be36bfb",
+      "note": "Same-PR finalization closing digest"
     }
   ],
   "reopenings": []

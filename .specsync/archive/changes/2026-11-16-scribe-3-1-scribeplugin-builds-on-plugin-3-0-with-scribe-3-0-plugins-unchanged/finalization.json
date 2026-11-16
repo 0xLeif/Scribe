@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "change_id": "scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged",
+  "implementation_commit": "e4bf6f532159068c5a630968c63851eb3213e7f1",
+  "implementation_tree": "0214979a9710f6076fe82bfecfe9275eb39a7456",
+  "contract_digest": "1c4c051b11d31787751cccbe08c84e63bfba503b9b37dfd07280b7d6da36e8d2",
+  "workspace_digest": "b47cf466a74664b36c969ffa57f4723426a4b3f5edebae74756810e844914d3f",
+  "closing_digest": "5fbf9bc3b24ddbbe2c36a923bb3c90ab718d907e27bc460849669a783be36bfb",
+  "review_digest": "81d5e7cd7dc3767a20f2d15edec3866e4f67f4ba70f38c442382ccceb6f3faba",
+  "finalization_digest": "386d95b8a549ac44b9251f0b066d96b519521f902f9fa41b3020932f4db41d20",
+  "timestamp": 1794799927
+}
