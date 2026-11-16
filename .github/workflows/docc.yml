@@ -14,10 +14,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: macos-12
+    runs-on: macos-15
     steps:
       - name: git checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: docbuild
         run: |
           xcodebuild docbuild -scheme Scribe \
@@ -28,9 +28,9 @@ jobs:
             --output-path docs;
           echo "<script>window.location.href += \"/documentation/scribe\"</script>" > docs/index.html;
       - name: artifacts
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: 'docs'
       - name: deploy
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4

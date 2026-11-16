@@ -2,21 +2,48 @@
 
 *📜 Logging all events*
 
-Scribe is a flexible logging library for Swift, designed to make logging easy and efficient. It provides a centralized system for logging messages and events within your application, and supports multiple logging outputs and plugins to extend its capabilities to meet your needs. Scribe integrates with [swift-log](https://github.com/apple/swift-log) for console logging, making it a versatile solution for all your logging requirements.
+Scribe is a logging library for Swift. It writes every entry to [swift-log](https://github.com/apple/swift-log) and hands it to plugins you register, so one log call can reach the console, a file, a debug screen or a server.
+
+Scribe 3 is built for Swift 6: `Scribe`, `ScribePlugin` and `Scribe.PluginPayload` are `Sendable`, logging calls are synchronous, and each plugin receives entries in the order they were logged, one at a time. Its only dependency is swift-log.
+
+## Requirements
+
+- Swift 6.0 or later (swift-tools-version 6.0)
+- macOS 13, iOS 16, tvOS 16, watchOS 9 or visionOS 1
+
+## Installation
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/0xLeif/Scribe", from: "3.0.0")
+]
+```
 
 ## Usage
 
-### Creating a ScribePlugin
-
-To create a Scribe plugin, you need to create a struct or class that conforms to the ScribePlugin protocol and implement its requirements. Here is an example of a simple plugin that increments a count for each log:
+### Creating a Scribe
 
 ```swift
-class CountPlugin: ScribePlugin {
-    static let shared = CountPlugin()
+import Scribe
 
-    var count: Int = 0
+let scribe = Scribe(label: "com.example.app")
+```
 
-    private init() {}
+`Scribe` is `Sendable`, so a single instance can be stored in a global, passed to actors or used from any task.
+
+You can also pass a custom swift-log handler or metadata provider:
+
+```swift
+let scribe = Scribe(label: "com.example.app", factory: { label in StreamLogHandler.standardError(label: label) })
+```
+
+### Writing a plugin
+
+A plugin conforms to `ScribePlugin`, which is `Sendable` and has one async requirement. An actor is the simplest way to keep state:
+
+```swift
+actor CountPlugin: ScribePlugin {
+    private(set) var count = 0
 
     func handle(value: Scribe.PluginPayload) async throws {
         count += 1
@@ -24,47 +51,80 @@ class CountPlugin: ScribePlugin {
 }
 ```
 
-### Registering plugins to Scribe
+The payload carries the entry's `level`, `message`, `metadata` and `source`, the `file`, `function` and `line` that logged it, and the `date` it was logged.
 
-Once you have created your Scribe Plugin, you just need to register it with your Scribe object. There are two ways to do this:
+A plugin may throw. Scribe ignores the error: that plugin still receives later entries, and other plugins are not affected.
 
-1. Pass the plugin to the plugins parameter when creating the Scribe object:
+### Registering plugins
 
-```swift
-let scribe = Scribe(
-    label: "test.count",
-    plugins: [
-        CountPlugin.shared
-    ]
-)
-```
-        
-2. Call `scribe.register(plugin:)` to add the plugin to an existing Scribe object:
+Pass plugins when you create the Scribe:
 
 ```swift
-let scribe = Scribe(label: "test.count")
-
-scribe.register(plugin: CountPlugin.shared)
+let counter = CountPlugin()
+let scribe = Scribe(label: "com.example.app", plugins: [counter])
 ```
 
-### Logging to Scribe
+Or register one later. `register(plugin:)` returns a registration you can use to remove the plugin:
 
-Scribe uses swift-log for logging, so the functions are similar in usage. To log a message with Scribe, simply call one of the logging functions, such as debug:
+```swift
+let registration = scribe.register(plugin: counter)
+
+scribe.remove(plugin: registration)
+scribe.removeAllPlugins()
+```
+
+A plugin receives the entries logged after it was registered and before it was removed.
+
+### Logging
+
+The logging functions match swift-log's. Each one logs to swift-log and returns immediately; it never waits for a plugin:
+
+```swift
+scribe.debug("Loaded settings")
+scribe.error("Request failed", metadata: ["status": "500"], source: "Network")
+scribe.log(level: .info, "Signed in")
+```
+
+Scribe supports the levels `trace`, `debug`, `info`, `notice`, `warning`, `error` and `critical`.
+
+### Waiting for plugins
+
+Plugins run on Scribe's own delivery task. Call `flush()` to wait until every entry logged so far has reached every plugin, for example in a test or before the app exits:
+
+```swift
+scribe.info("Shutting down")
+await scribe.flush()
+```
+
+## Moving from 2.x
+
+Scribe 3.0.0 is a major release. It drops the [Plugin](https://github.com/0xLeif/Plugin) package (and Fork with it), so update code that used Plugin's types:
+
+| 2.x | 3.0 |
+|-----|-----|
+| `swift-tools-version: 5.7`, macOS 11 / iOS 14 | Swift 6 (`swift-tools-version: 6.0`), macOS 13 / iOS 16 / tvOS 16 / watchOS 9 |
+| `ScribePlugin: ImmutablePlugin` from the Plugin package | `ScribePlugin: Sendable`, defined by Scribe; remove `import Plugin` |
+| A plugin could be a non-Sendable class | A plugin must be `Sendable`; use an actor, a struct, or a final class with a lock |
+| `open class Scribe: Pluginable` | `public final class Scribe: Sendable`; it cannot be subclassed |
+| `scribe.plugins` was a mutable array | `scribe.plugins` is read-only; use `register(plugin:)`, `remove(plugin:)` and `removeAllPlugins()` |
+| Each log call returned a `Task<Void, Error>` | Log calls return nothing; `await scribe.flush()` waits for delivery |
+| Each log call started its own task, so plugins could see entries out of order | Each plugin receives entries in the order they were logged, one at a time |
+| A plugin's error ended that log call's task | A plugin's error is ignored; delivery continues |
+| `PluginPayload` had `level`, `message`, `metadata`, `source` | It also has `file`, `function`, `line` and `date` |
+
+A 2.x test that awaited the returned task:
+
+```swift
+try await scribe.debug("Test").value
+```
+
+becomes:
 
 ```swift
 scribe.debug("Test")
+await scribe.flush()
 ```
 
-#### Log Levels
+## Documentation
 
-Scribe supports the following log levels:
-
-- `trace`
-- `debug`
-- `info`
-- `notice`
-- `warning`
-- `error`
-- `critical`
-
-Choose the appropriate log level depending on the importance and urgency of the message you are logging.
+API documentation is published with DocC at [scribe.0xl.io](https://scribe.0xl.io/documentation/scribe).
