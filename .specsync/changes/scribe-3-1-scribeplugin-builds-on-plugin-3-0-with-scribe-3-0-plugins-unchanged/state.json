@@ -10,7 +10,7 @@
   "state": "draft",
   "base_commit": "375c663dfbfac31ab3777ab908b81dbfddcc9099",
   "created_at": 1794799289,
-  "updated_at": 1794799290,
+  "updated_at": 1794799303,
   "affected_specs": [
     "Scribe"
   ],
@@ -20,7 +20,9 @@
     "Package.swift",
     "README.md",
     "specs/Scribe",
-    ".chough/sessions"
+    ".chough/sessions",
+    "hi/swift6.md",
+    "INTENT.md"
   ],
   "no_spec_change": false,
   "no_spec_change_rationale": null,
