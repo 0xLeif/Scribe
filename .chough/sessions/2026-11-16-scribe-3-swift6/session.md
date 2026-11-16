@@ -5,7 +5,7 @@ aliases: [scribe-3-swift6]
 objective: "Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency"
 intent_scope: ""
 modules: [Scribe]
-stage: build
+stage: accept
 stage_status: active
 iteration: 1
 callers: []
@@ -16,12 +16,12 @@ requirements: []
 cases: []
 design: []
 files: []
-observations: []
+observations: [2026-11-16-at-77a3fcb-swift-test-swift-6-mode-from-tools-6-0-15-tests-in]
 bugs: []
 blockers: []
 waiting_on_human: []
 run_consents: []
-next: Continue build
+next: Continue accept
 ---
 # Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency
 
@@ -36,6 +36,8 @@ Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork depen
 - 0xLeif decided "Approve the scope of scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency": "yes i approve" (Claude Code chat (hc t28), 2026-11-16, answering 'Do you approve: 1. Scribe 3.0.0, dropping the Plugin/Fork dependency, with Chough set up in the Scribe repo? 2. The Starling debug mode scope?'); recorded by claude-code (hc t28); a relayed claim, not authenticated; ran specsync change approve scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency as 0xLeif
 
 ## What was verified
+
+- [At 77a3fcb: swift test (Swift 6 mode from tools 6.0) 15 tests in 4 suites pass with no data-race diagnostics, including 1,000 entries in order, a throwing plugin not stopping delivery, a slow plugin not blocking 100 log calls (<500 ms), 50 tasks x 100 entries delivered exactly once in per-task order, and Package.swift listing only swift-log; specsync check --strict passes; the builder's release build, ThreadSanitizer run and DocC build pass](evidence/2026-11-16-at-77a3fcb-swift-test-swift-6-mode-from-tools-6-0-15-tests-in.md)
 
 ## Open threads
 
@@ -73,4 +75,14 @@ Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork depen
   - native_change: scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency
   - gate: native:approved
   - revision: 1c548f89eb5301f62fddd8efbb0a301ead00ba5a
+  - by: claude-code (hc t28)
+- 2026-11-16T02:45:27Z · advance · build → test · native:approved ^t-02108a
+  - native_change: scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency
+  - gate: native:approved
+  - revision: 77a3fcb515d1b78d697942148814e357acb76ec0
+  - by: claude-code (hc t28)
+- 2026-11-16T02:45:27Z · advance · test → accept · native:approved ^t-9ea275
+  - native_change: scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency
+  - gate: native:approved
+  - revision: 77a3fcb515d1b78d697942148814e357acb76ec0
   - by: claude-code (hc t28)
