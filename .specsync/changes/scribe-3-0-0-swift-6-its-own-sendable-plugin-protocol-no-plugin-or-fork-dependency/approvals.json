@@ -1,4 +1,54 @@
 {
-  "approvals": [],
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "0xLeif",
+      "timestamp": 1794796167,
+      "digest": "a9b60996f15977d342d1247b888f22a0b65f05843185d51c1c056540f9805a75",
+      "note": "Approved by 0xLeif at the Chough gate \"Approve the scope of scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency\": \"yes i approve\" (Claude Code chat (hc t28), 2026-11-16, answering 'Do you approve: 1. Scribe 3.0.0, dropping the Plugin/Fork dependency, with Chough set up in the Scribe repo? 2. The Starling debug mode scope?'). Relayed and recorded by claude-code (hc t28) at 2026-11-16T02:29:27Z through chough gate record 4f59800b70dd; a relayed claim, not authenticated.",
+      "approved_scope": {
+        "schema_version": 1,
+        "change_id": "scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency",
+        "title": "Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency",
+        "description": "Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency",
+        "kind": "feature",
+        "affected_specs": [
+          "Scribe"
+        ],
+        "affected_paths": [
+          ".chough/sessions",
+          ".specsync/sdd.json",
+          "Package.resolved",
+          "Package.swift",
+          "README.md",
+          "Sources/Scribe",
+          "Tests/ScribeTests",
+          "specs/Scribe"
+        ],
+        "no_spec_change": false,
+        "no_spec_change_rationale": null,
+        "acceptance_criteria": [
+          "Scribe 3.0.0 builds in Swift 6 with Sendable public types, its own plugin protocol and only swift-log, logs synchronously and delivers every entry to each plugin in order."
+        ],
+        "dependencies": [],
+        "supersedes": [],
+        "answers": {
+          "architecture_risk": "yes",
+          "constraints": "Swift 6 strict concurrency; synchronous logging calls; a 3.0.0 major version for the API break",
+          "public_contract": "yes"
+        }
+      },
+      "approved_delta_digests": {
+        "Scribe": "0391eb52e05c345317d5686855bdbb30ba81166bdedfca2ad6f4be94b7fa7861"
+      },
+      "approved_delta_bases": {},
+      "relayed_by": {
+        "decided_by": "0xLeif",
+        "words": "yes i approve",
+        "where": "Claude Code chat (hc t28), 2026-11-16, answering 'Do you approve: 1. Scribe 3.0.0, dropping the Plugin/Fork dependency, with Chough set up in the Scribe repo? 2. The Starling debug mode scope?'",
+        "recorded_by": "claude-code (hc t28)"
+      }
+    }
+  ],
   "reopenings": []
 }

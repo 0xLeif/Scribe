@@ -1,6 +1,6 @@
 ---
 id: scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency
-state: draft
+state: approved
 type: feature
 base_commit: 6cb66280af3ae57fc1619ec1e3a89726ace89e8d
 ---

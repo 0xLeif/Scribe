@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
-  "workflow_version": 2,
+  "workflow_version": 3,
   "workflow_origin_version": 2,
   "id": "scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency",
   "slug": "scribe-3-0-0-swift-6-its-own-sendable-plugin-protocol-no-plugin-or-fork-dependency",
   "title": "Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency",
   "description": "Scribe 3.0.0: Swift 6, its own Sendable plugin protocol, no Plugin or Fork dependency",
   "kind": "feature",
-  "state": "draft",
+  "state": "approved",
   "base_commit": "6cb66280af3ae57fc1619ec1e3a89726ace89e8d",
   "created_at": 1794796112,
-  "updated_at": 1794796166,
+  "updated_at": 1794796167,
   "affected_specs": [
     "Scribe"
   ],
