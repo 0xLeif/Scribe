@@ -19,7 +19,11 @@ files: []
 observations: [2026-11-16-at-c643310-swift-test-21-tests-in-6-suites-pass-swift-6-no]
 bugs: []
 blockers: []
-waiting_on_human: []
+waiting_on_human:
+  - gate: Implementation review of scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged
+    holds: accept
+    drives: review
+    opened: 2026-11-16T03:29:22Z
 run_consents: []
 next: Continue accept
 ---
@@ -85,4 +89,10 @@ Scribe 3.1: ScribePlugin builds on Plugin 3.0, with Scribe 3.0 plugins unchanged
   - native_change: scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged
   - gate: native:approved
   - revision: c64331009b6bed264d3db8614ffc6951257fdb5f
+  - by: claude-code (hc t28)
+- 2026-11-16T03:29:22Z · gate-opened · accept → accept · Implementation review of scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged ^t-dd9c32
+  - native_change: scribe-3-1-scribeplugin-builds-on-plugin-3-0-with-scribe-3-0-plugins-unchanged
+  - revision: 37023c33a02be40a403f0ccde431e99b3b8b8278
+  - holds: accept
+  - drives: review
   - by: claude-code (hc t28)
